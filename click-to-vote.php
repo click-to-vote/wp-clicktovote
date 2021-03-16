@@ -48,6 +48,10 @@ add_shortcode('click-to-vote', function ($atts) {
         }
     }
 
+    if (!$matchUrl) {
+        return "<script>console.log('wrong click-to-vote url: $url)</script>";
+    }
+
     $width = filter_var($width, FILTER_SANITIZE_NUMBER_INT) ?: 560;
     $height = filter_var($height, FILTER_SANITIZE_NUMBER_INT) ?: 350;
 
